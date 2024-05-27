@@ -14,11 +14,12 @@ const Sidebar = () => {
     <aside className="sidebar">
       <div className="flex size-full gap-4 flex-col">
         <Link href="/" className="sidebar-logo">
-          <Image
+        <Image priority= {false}
             src="/assets/images/logo-text.svg"
             alt="image-logo"
             width={160}
             height={200}
+            className='w-auto h-auto'
           />
         </Link>
         <nav className="sidebar-nav">
