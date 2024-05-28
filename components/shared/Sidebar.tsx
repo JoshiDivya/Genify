@@ -14,12 +14,13 @@ const Sidebar = () => {
     <aside className="sidebar">
       <div className="flex size-full gap-4 flex-col">
         <Link href="/" className="sidebar-logo">
-        <Image priority= {false}
+          <Image
+            priority={false}
             src="/assets/images/logo-text.svg"
             alt="image-logo"
             width={160}
             height={200}
-            className='w-auto h-auto'
+            className="w-auto h-auto"
           />
         </Link>
         <nav className="sidebar-nav">
@@ -52,7 +53,7 @@ const Sidebar = () => {
               })}
             </ul>
             <ul className="sidebar-nav_elements">
-            {navLinks.slice(6).map((link) => {
+              {navLinks.slice(6).map((link) => {
                 const isActive = link.route === pathName;
 
                 return (

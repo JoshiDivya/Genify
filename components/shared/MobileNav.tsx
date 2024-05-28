@@ -34,7 +34,6 @@ const MobileNav = () => {
                 src="/assets/icons/menu.svg"
                 className="cursor-pointer"
               ></Image>
-              
             </SheetTrigger>
             <SheetContent className="sheet-content sm:w-64">
               <>
@@ -45,38 +44,41 @@ const MobileNav = () => {
                   height={23}
                 ></Image>
                 <ul className="header-nav_elements">
-                {navLinks.map((link) => {
-                  const isActive = link.route === pathName;
+                  {navLinks.map((link) => {
+                    const isActive = link.route === pathName;
 
-                  return (
-                    <li
-                      key={link.route}
-                      className={`${
-                        isActive && 'gradient-text'
-                      } p-18 flex whitespace-nowrap text-dark-700`}
-                    >
-                      <Link href={link.route} className="sidebar-link cursor-pointer">
-                        <Image
-                          src={link.icon}
-                          alt="logo"
-                          width={25}
-                          height={25}
-                        ></Image>
-                        {link.label}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
+                    return (
+                      <li
+                        key={link.route}
+                        className={`${
+                          isActive && "gradient-text"
+                        } p-18 flex whitespace-nowrap text-dark-700`}
+                      >
+                        <Link
+                          href={link.route}
+                          className="sidebar-link cursor-pointer"
+                        >
+                          <Image
+                            src={link.icon}
+                            alt="logo"
+                            width={25}
+                            height={25}
+                          ></Image>
+                          {link.label}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
               </>
             </SheetContent>
           </Sheet>
         </SignedIn>
         <SignedOut>
-            <Button asChild className="button bg-purple-gradient bg-cover">
-              <Link href="/sign-in">Login</Link>
-            </Button>
-          </SignedOut>
+          <Button asChild className="button bg-purple-gradient bg-cover">
+            <Link href="/sign-in">Login</Link>
+          </Button>
+        </SignedOut>
       </nav>
     </header>
   );
